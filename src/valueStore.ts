@@ -6,7 +6,7 @@ export interface StoreUpdate<T> {
   curr: T;
 }
 
-export type StoreUpdateFn<T> = (state: T) => T;
+export type StateUpdaterFunction<T> = (state: T) => T;
 
 export type SelectorFunction<T, V> = (state: T) => V;
 
@@ -27,11 +27,9 @@ export class ValueStore<T> {
     return this.storeUpdatedSubject.asObservable();
   }
 
-  update(updaterFunction: StoreUpdateFn<T>) {
+  update(updaterFunction: StateUpdaterFunction<T>) {
     if (typeof updaterFunction !== 'function') {
-      throw new Error(`
-        'An update function should always be provided when triggering an update'
-      `);
+      throw new Error('An update function should always be provided when triggering an update');
     }
 
     const prevState = this.storeValueSubject.getValue();
