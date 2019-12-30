@@ -53,8 +53,5 @@
   },
   "peerDependencies": {
     "rxjs": "^6.0.0"
-  },
-  "dependencies": {
-    "redux": "^4.0.4"
   }
 }
