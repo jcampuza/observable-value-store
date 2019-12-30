@@ -1,6 +1,6 @@
-# ValueStore
+# Observable Value Store
 
-A Rxjs powered observable store for simple state.
+An Rxjs powered observable store for simple state.
 
 ### Usage
 
